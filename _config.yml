@@ -2,10 +2,13 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://2359media.github.io
+title: 2359media Engineering
+subtitle: Sharing our experience in mobile and web development
+
+author: 2359media
+author_web: http://2359media.com
+
 simple_search: https://www.google.com/search
 description:
 
@@ -39,7 +42,7 @@ rdiscount:
     - autolink
     - footnotes
     - smart
-pygments: false # default python pygments have been replaced by pygments.rb
+pygments: true # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index
 pagination_dir: blog  # Directory base for pagination URLs eg. /blog/page/2/
@@ -63,7 +66,7 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 # ----------------------- #
 
 # Github repositories
-github_user:
+github_user: 2359media
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
@@ -94,7 +97,18 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-50091624-1
+google_analytics_account: 2359media.github.io
 
 # Facebook Like
 facebook_like: false
+
+authors:
+  jessearmand:
+    display_name: Jesse Armand
+    gravatar: 4474b49a4dde9b54e0e7c51349eb9b9b
+    email: jesse.armand@2359media.com
+    web: http://jessearmand.github.io
+    twitter: jessearmand
+    github: jessearmand
+
