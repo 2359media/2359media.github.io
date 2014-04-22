@@ -4,7 +4,7 @@ title: "Rebuilding Instagram Feed Table View"
 description: "Analysis of Instagram feed table view as an inspiration for styleXstyle."
 date: 2014-04-16
 author: jessearmand
-categories: [ios, instagram, uitableview, stylexstyle]
+categories: [ios, instagram, auto-layout, uitableview, uitableviewcell, stylexstyle]
 ---
 
 ## Background
