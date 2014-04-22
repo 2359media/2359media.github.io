@@ -3,11 +3,12 @@
 # ----------------------- #
 
 url: http://2359media.github.io
-title: 2359media Engineering
+title: 2359 Media Engineering
 subtitle: Sharing our experience in mobile and web development
 
-author: 2359media
+author: 2359 Media Pte Ltd.
 author_web: http://2359media.com
+author_logo: /images/2359media_logo.png
 
 simple_search: https://www.google.com/search
 description:
