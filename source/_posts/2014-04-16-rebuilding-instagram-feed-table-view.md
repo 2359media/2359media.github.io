@@ -154,7 +154,7 @@ From this realization, we need to think of smarter ways to solve this. First, th
 Then, we overlooked that there's a way to examine how Instagram build the content feed. To do this, we've used the commonly known way to [inspect 3rd party apps](http://petersteinberger.com/blog/2013/how-to-inspect-the-view-hierarchy-of-3rd-party-apps/).
 
 
-<video src="/media/2014-04-16-rebuilding-instagram-feed-table-view/videos/instagram-feed.m4v" autoplay="true" loop="true" width="100%"></video>
+<video autoplay="true" loop="true" width="100%"><source src="/media/2014-04-16-rebuilding-instagram-feed-table-view/videos/instagram-feed.m4v" type="video/x-m4v"></source><source src="/media/2014-04-16-rebuilding-instagram-feed-table-view/videos/instagram-feed.webm" type="video/webm"></source></video>
 
 
 As demonstrated by the above video, each post is separated by a section, and each section consists of different types of cells that correspond to the type of content (photo, video, text, action, or header). There's no separation of likes, comments, or caption at the <code>UITableViewCell</code> level.
@@ -391,7 +391,7 @@ Likes and caption are rewritten in a similar way to comments. Using
 
 ## Wrapping up
 
-<video src="/media/2014-04-16-rebuilding-instagram-feed-table-view/videos/stylexstyle-feed.m4v" autoplay="true" loop="true" width="50%"></video>
+<video autoplay="true" loop="true" width="50%"><source src="/media/2014-04-16-rebuilding-instagram-feed-table-view/videos/stylexstyle-feed.m4v" type="video/x-m4v"></source><source src="/media/2014-04-16-rebuilding-instagram-feed-table-view/videos/stylexstyle-feed.webm" type="video/webm"></source></video>
 
 As we can see we've reduced a lot of complexity of the table view code by replicating what Instagram did, with an improvement on scrolling performance. There are a few edge cases here and there but the real work is coming up with such an ingeniously simple and elegant way to solve a problem like this on a mobile device.
 
