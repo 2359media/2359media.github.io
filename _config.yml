@@ -11,7 +11,8 @@ author_web: http://2359media.com
 author_logo: /images/2359media_logo.png
 
 simple_search: https://www.google.com/search
-description:
+description: "2359 Media engineering blog. Dedicated to share our engineering insights and experience in what we do."
+keywords: "2359, 2359media, ios, ios7, android, mobile, web, html, html5, ruby, java, javascript, rails, node.js, js, engineering, software, development, singapore, vietnam, frontend, backend, server, client, apps"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -73,7 +74,7 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: 2359eng
 twitter_tweet_button: true
 
 # Google +1

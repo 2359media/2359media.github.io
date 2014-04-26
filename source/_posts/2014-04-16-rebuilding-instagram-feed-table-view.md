@@ -5,6 +5,7 @@ description: "Analysis of Instagram feed table view as an inspiration for styleX
 date: 2014-04-16
 author: jessearmand
 categories: [ios, instagram, auto-layout, uitableview, uitableviewcell, stylexstyle]
+keywords: "ios, instagram, auto-layout, uitableview, uitableviewcell, stylexstyle, ios7, 2359media, 2359, engineering, mobile, feed, photos"
 ---
 
 ## Background
