@@ -105,7 +105,7 @@ This way it easily generates a structure of code similar to the following:
 }
 {% endhighlight %}
 
-The above code snippet works, but it's quite hard to comprehend. Moreover, if we want to understand whether there's any layout constraints problems resulting from it — we've already used [UIView-AutoLayout](https://github.com/smileyborg/UIView-AutoLayout) that's simpler to use compared to the Auto Layout's visual format syntax.
+The above code snippet works, but it's quite hard to comprehend. Moreover, if we want to understand whether there's any layout constraints problems resulting from it — we've already used [UIView-AutoLayout](http://github.com/smileyborg/UIView-AutoLayout) that's simpler to use compared to the Auto Layout's visual format syntax.
 
 There's a solution to this code smell in the following section. Next, we tackle dynamic content height.
 
@@ -144,7 +144,7 @@ Reconstructing the cell layout constraints and re-calculating the height every t
 
 How did we get the height for each row? It's actually done by the magic of Auto Layout's <code>-[UIView systemLayoutSizeFittingSize:]</code>, which queries the layout engine for a valid layout of the view that fits as close to the given size as possible. It is used in <code>tableView:heightForRowAtIndexPath:</code> and given <code>UILayoutFittingCompressedSize</code>, which ensures the calculated size is the smallest possible that fits the contents.
 
-Other than the post by [John Szumski](http://johnszumski.com/blog/auto-layout-for-table-view-cells-with-dynamic-heights), there are series of StackOverflow answers by Tyler Fox which comprehensively detailed how to construct a table view with dynamic cells height utilizing Auto Layout. A github project is available [here](https://github.com/smileyborg/TableViewCellWithAutoLayout).
+Other than the post by [John Szumski](http://johnszumski.com/blog/auto-layout-for-table-view-cells-with-dynamic-heights), there are [series of answers on StackOverflow](http://stackoverflow.com/questions/18746929/using-auto-layout-in-uitableview-for-dynamic-cell-layouts-variable-row-heights) by Tyler Fox which comprehensively detailed how to construct a table view with dynamic cells height utilizing Auto Layout. 
 
 We've been working with this implementation for about a month. It's capable to display a feed cell with dynamic content, but somehow it's lacking what we originally intend to achieve with Auto Layout. Core Animation performance (when the user scrolls) is suboptimal, and the idea of *simplicity* that we want to achieve with declarative layout doesn't complement the effort that we need to do to optimize it.
 
@@ -271,13 +271,13 @@ From here, it follows that we can do further optimization by also separating the
 
 ## Experiment with Instagram Feed
 
-For the purpose of study, we've created a [separate project](https://github.com/2359media/STXDynamicTableView) with the instagram popular media json feed as a content using a table view structure similar to that of Instagram app. This has a much simpler and slightly different feed layout compared to the one we had on the styleXstyle app codebase, because we have to do lots of colors, view margins, and font styling on the real app. But, it's intended to be a bit more generalized (e.g. we've added protocols to support data models for the <code>UITableView</code>'s data source).
+For the purpose of study, we've created a [sample project](http://github.com/2359media/STXDynamicTableView) with the instagram popular media json feed as a content using a table view structure similar to that of Instagram app. This has a much simpler and slightly different feed layout compared to the one we had on the styleXstyle app codebase, because we have to do lots of colors, view margins, and font styling on the real app. But, it's intended to be a bit more generalized (e.g. we've added protocols to support data models for the <code>UITableView</code>'s data source).
 
 If we take a look at the view hierarchy of the instagram inspired table view:
 
 ![Instagram inspired dynamic table view](/media/2014-04-16-rebuilding-instagram-feed-table-view/images/stxdynamictableview.png)
 
-As it has been mentioned before we're going to separate likes, caption, and comments. From our [sample code](https://github.com/2359media/STXDynamicTableView/blob/master/STXDynamicTableView/Managers/STXFeedTableViewDelegate.m), it will result in the following height calculation for a table view section:
+As it has been mentioned before we're going to separate likes, caption, and comments. From our [table view delegate code](http://github.com/2359media/STXDynamicTableView/blob/master/STXDynamicTableView/Managers/STXFeedTableViewDelegate.m), it will result in the following height calculation for a table view section:
 
 {% highlight objc linenos %}
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -395,4 +395,6 @@ Likes and caption are rewritten in a similar way to comments. Using
 <video autoplay="true" loop="true" width="50%"><source src="/media/2014-04-16-rebuilding-instagram-feed-table-view/videos/stylexstyle-feed.m4v" type="video/x-m4v"></source><source src="/media/2014-04-16-rebuilding-instagram-feed-table-view/videos/stylexstyle-feed.webm" type="video/webm"></source></video>
 
 As we can see we've reduced a lot of complexity of the table view code by replicating what Instagram did, with an improvement on scrolling performance. There are a few edge cases here and there but the real work is coming up with such an ingeniously simple and elegant way to solve a problem like this on a mobile device.
+
+[Checkout GitHub for a sample code](http://github.com/2359media/STXDynamicTableView) of this project.
 
