@@ -78,5 +78,5 @@ theme: strata
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/daudabas/daudabas.github.io.git
+  repo: git@github.com:2359media/2359media.github.io.git
   branch: master
