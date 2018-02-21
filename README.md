@@ -60,23 +60,25 @@ When you are done writing your article, commit your changes and push to Github.
 
 On Github, create a pull request to merge your code to `source` branch.
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
 ## Deployment
+
+Deployment will only be done by the platform leads. Follow the instruction below to deploy the latest changes to the website.
+
+Pull the latest change in `source` branch
+```
+$ git checkout source
+$ git pull
+```
+
+Clean cache and public folder
+```
+$ hexo clean
+```
+
+Deploy!
+```
+$ hexo deploy
+```
 
 Add additional notes about how to deploy this on a live system
 
@@ -84,13 +86,3 @@ Add additional notes about how to deploy this on a live system
 
 * [Hexo](https://hexo.io) - The static site generator
 * [Light](https://hexo.io/hexo-theme-light/) - Theme used
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
