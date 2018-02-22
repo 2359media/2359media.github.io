@@ -8,7 +8,7 @@ categories:
   - Blockchain
 ---
 
-This blog aims to familiarise you with the process of deploying & interacting smart contracts. In this post, we will be using remix as the IDE and metamask as the frontend UI to interact with the smart contract.
+This post aims to familiarise you with the process of deploying & interacting smart contracts. In this post, we will be using remix as the IDE and metamask as the frontend UI to interact with the smart contract.
 
 ## Enter the Remix
 
@@ -36,3 +36,28 @@ Metamask is a chrome extension that acts as a bridge that allows you to run Ethe
 * Multiple addresses can be generated using wallet (or seed words). This is known as a [Deterministic wallet](https://en.bitcoin.it/wiki/Deterministic_wallet)
 
 More info on metamask on their [official github page](https://github.com/MetaMask/faq/)
+
+## Deployment
+
+There are several ways to deploy smart contract. The most common ways are via truffle using the truffle migrate/deploy command or using remix. Alternatively, you can also compile the smart contract into bytecode and deploy in any 3rd party tool or via plugins to metamask. However we will only focus on truffle and remix in this blog.
+
+In addition to testing it locally/privately like Ganache-cli, there are 3 public test nets in ethereum that you can use to test the smart contract before deploying on the main net
+
+* ROPSTEN - Proof Of Work
+
+* KOVAN - Proof Of Authority
+
+* RINKEBY - Clique Consensus
+
+We usually use Rinkeby as it is more stable and contains a convenient facuet to get test ethers.
+
+## Interacting with smart contracts
+
+After deploying smart contracts, you can interact with smart contracts in 3 main ways
+
+* Using remix in-built tool under Run tab - It should automatically list the contract you deployed. Alternatively, load a contract address
+* Using 3rd party wallet like myEtherWallet, myCrypto or mist by importing the ABI and contract address
+* Calling web3 javascript directly via interfaces like truffle console or unit tests
+
+Note: To get data or call functions notioned by "view", meaning that the request does not alter the blockchain state, you do not need to create any transaction in the blockchain.
+
