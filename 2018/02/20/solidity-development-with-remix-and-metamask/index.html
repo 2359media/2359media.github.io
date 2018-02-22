@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Solidity development with Remix and Metamask | 2359 Media Engineering</title>
+  <meta name="author" content="2359 Media">
+  
+  <meta name="description" content="This post aims to familiarise you with the process of deploying &amp;amp; interacting smart contracts. In this post, we will be using remix as the IDE and">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Solidity development with Remix and Metamask"/>
+  <meta property="og:site_name" content="2359 Media Engineering"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="2359 Media Engineering" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">2359 Media Engineering</a></h1>
+  <h2><a href="/">Sharing our experience in mobile and web development.</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div>
+</header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-02-20T10:28:11.000Z"><a href="/2018/02/20/solidity-development-with-remix-and-metamask/">2018-02-20</a></time>
+      
+      
+  
+    <h1 class="title">Solidity development with Remix and Metamask</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>This post aims to familiarise you with the process of deploying &amp; interacting smart contracts. In this post, we will be using remix as the IDE and metamask as the frontend UI to interact with the smart contract.</p>
+<h2 id="Enter-the-Remix"><a href="#Enter-the-Remix" class="headerlink" title="Enter the Remix"></a>Enter the Remix</h2><p>Remix is an online IDE for Solidity with an intergrated debugger &amp; testing environment. It allows developers to compile and deploy smart contracts on a local test environment or public blockchain via metamask. If you haven’t, read the <a href="/2018/02/20/gettings-started-on-blockchain-development/">previous post</a> first.</p>
+<p><strong><a href="http://remix.ethereum.org/" target="_blank" rel="noopener">Access the latest version of remix</a></strong></p>
+<h4 id="Some-things-to-note-when-using-remix"><a href="#Some-things-to-note-when-using-remix" class="headerlink" title="Some things to note when using remix"></a>Some things to note when using remix</h4><ul>
+<li>Ensure the environment is correct<ul>
+<li>Javascript VM option means the blockchain exist only on the remix environment</li>
+<li>Injected web3 option will use metamask to connect to the ethereum network that metamask is currently on</li>
+<li>Web3 Provider option allows you to connect to any ethereum node (ganache for example)</li>
+</ul>
+</li>
+<li>The details button in Compile tab is useful to get smart contract’s Bytecode or <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html" target="_blank" rel="noopener">ABI</a> for use in 3rd party tools.</li>
+<li>When verifying contract source code on etherscan, make sure optimiser is selected</li>
+</ul>
+<p>More details &amp; tutorials are available on the official documentation <a href="https://remix.readthedocs.io/en/latest/" target="_blank" rel="noopener">here</a></p>
+<h2 id="Meet-the-Metamask"><a href="#Meet-the-Metamask" class="headerlink" title="Meet the Metamask"></a>Meet the Metamask</h2><p>Metamask is a chrome extension that acts as a bridge that allows you to run Ethereum dApps right in your browser without running a full Ethereum node.</p>
+<p><strong><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank" rel="noopener">Install metamask</a></strong></p>
+<h4 id="Some-things-to-note-when-using-metamask"><a href="#Some-things-to-note-when-using-metamask" class="headerlink" title="Some things to note when using metamask"></a>Some things to note when using metamask</h4><ul>
+<li>Metamask uses <a href="https://en.bitcoin.it/wiki/Mnemonic_phrase" target="_blank" rel="noopener">Mnemonic phrase</a> as private keys. Meaning, the actual private key is derived from the seed words and you can restore your wallet using it. Keep them safe!</li>
+<li>Multiple addresses can be generated using wallet (or seed words). This is known as a <a href="https://en.bitcoin.it/wiki/Deterministic_wallet" target="_blank" rel="noopener">Deterministic wallet</a></li>
+</ul>
+<p>More info on metamask on their <a href="https://github.com/MetaMask/faq/" target="_blank" rel="noopener">official github page</a></p>
+<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><p>There are several ways to deploy smart contract. The most common ways are via truffle using the truffle migrate/deploy command or using remix. Alternatively, you can also compile the smart contract into bytecode and deploy in any 3rd party tool or via plugins to metamask. However we will only focus on truffle and remix in this blog.</p>
+<p>In addition to testing it locally/privately like Ganache-cli, there are 3 public test nets in ethereum that you can use to test the smart contract before deploying on the main net</p>
+<ul>
+<li><p>ROPSTEN - Proof Of Work</p>
+</li>
+<li><p>KOVAN - Proof Of Authority</p>
+</li>
+<li><p>RINKEBY - Clique Consensus</p>
+</li>
+</ul>
+<p>We usually use Rinkeby as it is more stable and contains a convenient facuet to get test ethers.</p>
+<h2 id="Interacting-with-smart-contracts"><a href="#Interacting-with-smart-contracts" class="headerlink" title="Interacting with smart contracts"></a>Interacting with smart contracts</h2><p>After deploying smart contracts, you can interact with smart contracts in 3 main ways</p>
+<ul>
+<li>Using remix in-built tool under Run tab - It should automatically list the contract you deployed. Alternatively, load a contract address</li>
+<li>Using 3rd party wallet like myEtherWallet, myCrypto or mist by importing the ABI and contract address</li>
+<li>Calling web3 javascript directly via interfaces like truffle console or unit tests</li>
+</ul>
+<p>Note: To get data or call functions notioned by “view”, meaning that the request does not alter the blockchain state, you do not need to create any transaction in the blockchain.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Blockchain/">Blockchain</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Onboarding/">Onboarding</a>, <a href="/tags/Solidity/">Solidity</a>
+  </div>
+
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-comments" data-href="https://engineering.2359media.net/2018/02/20/solidity-development-with-remix-and-metamask/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+      
+  
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:engineering.2359media.net">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">Categories</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Blockchain/">Blockchain</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tag">
+  <h3 class="title">Tags</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Ethereum/">Ethereum</a><small>1</small></li>
+  
+    <li><a href="/tags/Onboarding/">Onboarding</a><small>2</small></li>
+  
+    <li><a href="/tags/Solidity/">Solidity</a><small>2</small></li>
+  
+    <li><a href="/tags/Summary/">Summary</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2018 2359 Media
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

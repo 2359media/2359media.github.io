@@ -3,13 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>2359 Media Engineering</title>
+  <title>Scaling Ethereum - A short summary | 2359 Media Engineering</title>
   <meta name="author" content="2359 Media">
+  
+  <meta name="description" content="This post will provide you with a short introduction of the future of ethereum with regards to it’s scalability.
+The problem statement
+Transaction thr">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Scaling Ethereum - A short summary"/>
   <meta property="og:site_name" content="2359 Media Engineering"/>
 
   
@@ -43,8 +47,7 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper">
-  <article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
   
   <div class="post-content">
     <header>
@@ -54,7 +57,7 @@
       
       
   
-    <h1 class="title"><a href="/2018/02/22/Scaling-ethereum-summary/">Scaling Ethereum - A short summary</a></h1>
+    <h1 class="title">Scaling Ethereum - A short summary</h1>
   
 
     </header>
@@ -106,6 +109,17 @@
     <footer>
       
         
+  
+  <div class="categories">
+    <a href="/categories/Blockchain/">Blockchain</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/Summary/">Summary</a>, <a href="/tags/Ethereum/">Ethereum</a>
+  </div>
+
         
       
       <div class="clearfix"></div>
@@ -114,152 +128,27 @@
 </article>
 
 
+<section id="comment">
+  <h1 class="title">Comments</h1>
 
-
-  <article class="post">
   
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-02-20T10:28:11.000Z"><a href="/2018/02/20/solidity-development-with-remix-and-metamask/">2018-02-20</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/02/20/solidity-development-with-remix-and-metamask/">Solidity development with Remix and Metamask</a></h1>
-  
+      <div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
-    </header>
-    <div class="entry">
-      
-        <p>This post aims to familiarise you with the process of deploying &amp; interacting smart contracts. In this post, we will be using remix as the IDE and metamask as the frontend UI to interact with the smart contract.</p>
-<h2 id="Enter-the-Remix"><a href="#Enter-the-Remix" class="headerlink" title="Enter the Remix"></a>Enter the Remix</h2><p>Remix is an online IDE for Solidity with an intergrated debugger &amp; testing environment. It allows developers to compile and deploy smart contracts on a local test environment or public blockchain via metamask. If you haven’t, read the <a href="/2018/02/20/gettings-started-on-blockchain-development/">previous post</a> first.</p>
-<p><strong><a href="http://remix.ethereum.org/" target="_blank" rel="noopener">Access the latest version of remix</a></strong></p>
-<h4 id="Some-things-to-note-when-using-remix"><a href="#Some-things-to-note-when-using-remix" class="headerlink" title="Some things to note when using remix"></a>Some things to note when using remix</h4><ul>
-<li>Ensure the environment is correct<ul>
-<li>Javascript VM option means the blockchain exist only on the remix environment</li>
-<li>Injected web3 option will use metamask to connect to the ethereum network that metamask is currently on</li>
-<li>Web3 Provider option allows you to connect to any ethereum node (ganache for example)</li>
-</ul>
-</li>
-<li>The details button in Compile tab is useful to get smart contract’s Bytecode or <a href="https://solidity.readthedocs.io/en/develop/abi-spec.html" target="_blank" rel="noopener">ABI</a> for use in 3rd party tools.</li>
-<li>When verifying contract source code on etherscan, make sure optimiser is selected</li>
-</ul>
-<p>More details &amp; tutorials are available on the official documentation <a href="https://remix.readthedocs.io/en/latest/" target="_blank" rel="noopener">here</a></p>
-<h2 id="Meet-the-Metamask"><a href="#Meet-the-Metamask" class="headerlink" title="Meet the Metamask"></a>Meet the Metamask</h2><p>Metamask is a chrome extension that acts as a bridge that allows you to run Ethereum dApps right in your browser without running a full Ethereum node.</p>
-<p><strong><a href="https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn" target="_blank" rel="noopener">Install metamask</a></strong></p>
-<h4 id="Some-things-to-note-when-using-metamask"><a href="#Some-things-to-note-when-using-metamask" class="headerlink" title="Some things to note when using metamask"></a>Some things to note when using metamask</h4><ul>
-<li>Metamask uses <a href="https://en.bitcoin.it/wiki/Mnemonic_phrase" target="_blank" rel="noopener">Mnemonic phrase</a> as private keys. Meaning, the actual private key is derived from the seed words and you can restore your wallet using it. Keep them safe!</li>
-<li>Multiple addresses can be generated using wallet (or seed words). This is known as a <a href="https://en.bitcoin.it/wiki/Deterministic_wallet" target="_blank" rel="noopener">Deterministic wallet</a></li>
-</ul>
-<p>More info on metamask on their <a href="https://github.com/MetaMask/faq/" target="_blank" rel="noopener">official github page</a></p>
-<h2 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h2><p>There are several ways to deploy smart contract. The most common ways are via truffle using the truffle migrate/deploy command or using remix. Alternatively, you can also compile the smart contract into bytecode and deploy in any 3rd party tool or via plugins to metamask. However we will only focus on truffle and remix in this blog.</p>
-<p>In addition to testing it locally/privately like Ganache-cli, there are 3 public test nets in ethereum that you can use to test the smart contract before deploying on the main net</p>
-<ul>
-<li><p>ROPSTEN - Proof Of Work</p>
-</li>
-<li><p>KOVAN - Proof Of Authority</p>
-</li>
-<li><p>RINKEBY - Clique Consensus</p>
-</li>
-</ul>
-<p>We usually use Rinkeby as it is more stable and contains a convenient facuet to get test ethers.</p>
-<h2 id="Interacting-with-smart-contracts"><a href="#Interacting-with-smart-contracts" class="headerlink" title="Interacting with smart contracts"></a>Interacting with smart contracts</h2><p>After deploying smart contracts, you can interact with smart contracts in 3 main ways</p>
-<ul>
-<li>Using remix in-built tool under Run tab - It should automatically list the contract you deployed. Alternatively, load a contract address</li>
-<li>Using 3rd party wallet like myEtherWallet, myCrypto or mist by importing the ABI and contract address</li>
-<li>Calling web3 javascript directly via interfaces like truffle console or unit tests</li>
-</ul>
-<p>Note: To get data or call functions notioned by “view”, meaning that the request does not alter the blockchain state, you do not need to create any transaction in the blockchain.</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-02-20T06:23:22.000Z"><a href="/2018/02/20/getting-started-on-blockchain-development/">2018-02-20</a></time>
-      
+<div class="fb-comments" data-href="https://engineering.2359media.net/2018/02/22/Scaling-ethereum-summary/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
-    <h1 class="title"><a href="/2018/02/20/getting-started-on-blockchain-development/">Getting Started On Blockchain Development</a></h1>
-  
+</section>
 
-    </header>
-    <div class="entry">
-      
-        <p>This is not a tutorial on blockchain development. Rather, this article will relay to you what resources you may need to start developing a smart contract. Through our learnings and trials at 2359, we have compiled a list of resources that will save you some time googling and get started on coding in the shortest time possible.</p>
-<h3 id="Quick-Readings"><a href="#Quick-Readings" class="headerlink" title="Quick Readings"></a>Quick Readings</h3><p>Getting into blockchain development is different from other platform in a way that it is not technically challenging. However, it requires a lot of domain knowledge and understanding of its core philosophy. Therefore it is important that you read up on the following articles to understand what blockchain is about and the problem it is trying to solve.</p>
-<ul>
-<li><p><a href="https://steemit.com/blockchain/@digitalpro/how-bitcoin-works-infographic" target="_blank" rel="noopener">How Bitcoin Works Infographic</a><br>An easy to understand infographic.</p>
-</li>
-<li><p><a href="https://blockgeeks.com/guides/ethereum/" target="_blank" rel="noopener">What is Ethereum? A Step-by-Step Beginners Guide</a><br>Other than ethereum primers, there are also other useful guides about other blockchains.</p>
-</li>
-</ul>
-<h3 id="Online-Courses"><a href="#Online-Courses" class="headerlink" title="Online Courses"></a>Online Courses</h3><p>Our favourite go to course is <a href="https://cryptozombies.io/" target="_blank" rel="noopener">CryptoZombies</a>. The course introduces you to Solidity, the programming language for creating smart contracts on Ethereum.</p>
-<p>There is also a good course on Udemy which we highly recommend, <a href="https://www.udemy.com/getting-started-with-ethereum-solidity-development/" target="_blank" rel="noopener">Become a Blockchain Developer with Ethereum and Solidity</a>.</p>
-<h3 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h3><p>Now that we are ready for some development action. You should get acquainted with the tools of the trade.</p>
-<ul>
-<li><p><a href="http://truffleframework.com/" target="_blank" rel="noopener">Truffle Framework</a><br>A development environment that helps with testing and deploying of smart contracts.</p>
-</li>
-<li><p><a href="https://etherscan.io/" target="_blank" rel="noopener">Etherscan</a><br>A website that allows you to get information on a contract or a transaction.</p>
-</li>
-<li><p><a href="http://remix.ethereum.org/" target="_blank" rel="noopener">Remix</a><br>An online IDE that allows you to compile, run and debug your smart contract.</p>
-</li>
-<li><p><a href="https://github.com/poanetwork/solidity-flattener" target="_blank" rel="noopener">Oracles Combine Solidity</a><br>Solidity allows you to reference other smart contracts through the import statement. However there will be times when you need to flatten your smart contract into one single file. For example when you want to verify your smart contract with <a href="https://etherscan.io/" target="_blank" rel="noopener">Etherscan</a>. Oracles Combine Solidity is the tool right for the job.</p>
-</li>
-<li><p><a href="https://github.com/trufflesuite/ganache-cli" target="_blank" rel="noopener">Ganache-cli</a><br>Run ganache-cli to create your own local testing environment. It will also provide 10 accounts with 100 ether each to play with by default.</p>
-</li>
-</ul>
-<h3 id="Best-Practices-and-Security"><a href="#Best-Practices-and-Security" class="headerlink" title="Best Practices and Security"></a>Best Practices and Security</h3><ul>
-<li><p><a href="https://consensys.github.io/smart-contract-best-practices/" target="_blank" rel="noopener">Smart Contract Best Practices</a><br>This is a comprehensive document that details the best practices you should employ in developing your smart contracts</p>
-</li>
-<li><p><a href="https://securify.ch/" target="_blank" rel="noopener">Securify</a><br>A tool that can help to point out security flaws in your smart contract.</p>
-</li>
-</ul>
-<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ul>
-<li><p><a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="noopener">Bitcoin: A Peer-to-Peer Electronic Cash System</a><br>This is the famous white paper by Satoshi Nakamoto that paved the way to the blockchain explosion.</p>
-</li>
-<li><p><a href="https://solidity.readthedocs.io/en/develop/" target="_blank" rel="noopener">Solidity Documentation</a><br>In-depth documentation on Solidity language. It also has a section on security and best practices.</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-<nav id="pagination">
-  
-  
-  <div class="clearfix"></div>
-</nav></div></div>
+</div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
