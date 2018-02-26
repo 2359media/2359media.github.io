@@ -52,7 +52,7 @@ Allows for unlimited scalability with enforceable state transition via proof of 
 Nested blockchains
 Block rollback upon proof of fraud
 
-[Plasma whitepaper](plasma.io/plasma.pdf)
+[Plasma whitepaper](https://plasma.io/plasma.pdf)
 [OmiseGO - First plasma project construction post](https://blog.omisego.network/construction-of-a-plasma-chain-0x1-614f6ebd1612)
 [First plasma POC demo by Bankex](https://github.com/BANKEX/PlasmaETHexchange)
 
